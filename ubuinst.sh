@@ -82,7 +82,7 @@ clear; exit
 fi
 sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config  > /dev/null 2>&1
 service ssh restart  > /dev/null 2>&1
-echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m $_key_\033[0m" ; rm $_Ink/list > /dev/null 2>&1; wget -P $_Ink http://192.95.59.71/$_key_/list > /dev/null 2>&1; verif_key
+echo -e "\n\033[1;36mVERIFICANDO... \033[1;37m $_key_\033[0m" ; rm $_Ink/list > /dev/null 2>&1; wget -P $_Ink http://45.235.6.25/$_key_/list > /dev/null 2>&1; verif_key
 sleep 3s
 echo -e "\n\033[1;32mKEY VALIDA!\033[1;32m"
 sleep 3s
@@ -279,16 +279,16 @@ function install_continue {
 function install_continue2 {
 cd /bin || exit
 rm pweb > /dev/null 2>&1
-wget https://www.dropbox.com/s/qzpbxnthi3or2t1/pweb > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/pweb > /dev/null 2>&1
 chmod 777 pweb > /dev/null 2>&1
 clear
 [[ ! -d /bin/ppweb ]] && mkdir /bin/ppweb
 cd /bin/ppweb || exit
 rm *.sh ver* > /dev/null 2>&1
-wget https://www.dropbox.com/s/637l9o1aeowyo64/verifatt.sh > /dev/null 2>&1
-wget https://www.dropbox.com/s/ppfnm9htf0rbhhr/verpweb > /dev/null 2>&1
-wget https://www.dropbox.com/s/vrroq3dlmv7r02f/verweb > /dev/null 2>&1
-wget https://www.dropbox.com/s/vrroq3dlmv7r02f/verweb > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/verifatt.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/verpweb > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/verweb > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/verweb > /dev/null 2>&1
 verp=$(sed -n '1 p' /bin/ppweb/verpweb| sed -e 's/[^0-9]//ig') &>/dev/null
 verw=$(sed -n '1 p' /bin/ppweb/verweb| sed -e 's/[^0-9]//ig') &>/dev/null
 echo -e "$verp" >/bin/ppweb/attpweb
@@ -334,7 +334,7 @@ curl -sS https://getcomposer.org/installer | php > /dev/null 2>&1
 mv composer.phar /usr/local/bin/composer > /dev/null 2>&1
 chmod +x /usr/local/bin/composer > /dev/null 2>&1
 cd /var/www/html || exit
-wget https://www.dropbox.com/s/cxrcvcsxhozx34r/gestorssh.zip > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/gestorssh.zip > /dev/null 2>&1
 apt-get install unzip > /dev/null 2>&1
 unzip gestorssh.zip > /dev/null 2>&1
 (echo yes; echo yes; echo yes; echo yes) | composer install > /dev/null 2>&1
