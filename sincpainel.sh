@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-echo -e "\033[1;36m⚡SINCRONIZANDO O SERVIDOR COM O PAINEL WEB REY⚡\033[0m"
+echo -e "\033[1;36m⚡SINCRONIZANDO O SERVIDOR COM O PAINEL TECNO WEB⚡\033[0m"
 echo "America/Sao_Paulo" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 dpkg-reconfigure --frontend noninteractive tzdata
@@ -12,9 +12,9 @@ echo -e "\033[1;36mREGISTRANDO UMA LICENÇA...\033[0m"
 rm *.sh* > /dev/null 2>&1
 rm *.zip > /dev/null 2>&1
 apt install unzip -y > /dev/null 2>&1
-wget https://www.dropbox.com/s/mxo8a7h4flmv8tl/sshplus.zip.001 > /dev/null 2>&1
-wget https://www.dropbox.com/s/waajr2zoba9t4a6/sshplus.zip.002 > /dev/null 2>&1
-wget https://www.dropbox.com/s/dwizff4c1hoee0a/sshplus.zip.003 > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/sshplus.zip.001 > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/sshplus.zip.002 > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/sshplus.zip.003 > /dev/null 2>&1
 cat sshplus.zip* > monitor.zip && zip -F monitor.zip > /dev/null 2>&1
 rm -rf /opt/sshplus > /dev/null 2>&1
 unzip monitor.zip -d  /opt/sshplus/ > /dev/null 2>&1
@@ -24,7 +24,7 @@ if [[ -e "/opt/sshplus/licenca.txt" ]]; then
 sed -i "s;ATIVADO;$crack;g" /opt/sshplus/licenca.txt > /dev/null 2>&1
 fi
 clear
-wget https://www.dropbox.com/s/qwk0hsrmstdm2oq/sincpainel.zip > /dev/null 2>&1
+wget https://raw.githubusercontent.com/Rafa4g/PN/main/sincpainel.zip > /dev/null 2>&1
 unzip sincpainel.zip > /dev/null 2>&1
 chmod +x *sh > /dev/null 2>&1
 service ssh restart
